@@ -1,0 +1,56 @@
+[
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "compile_and_run",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def compile_and_run(file, is_generator = False):\n    compile_command = [\"g++\", file, \"-o\", \"output\"]\n    subprocess.run(compile_command, check=True)\n    run_command = [\"./output\"]\n    subprocess.run(run_command, check=True)\ndef compare():\n    with open('correctOutput.txt', 'r') as file:\n        data1 = file.readlines()\n    with open('testOutput.txt', 'r') as file:\n        data2 = file.readlines()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "compare",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def compare():\n    with open('correctOutput.txt', 'r') as file:\n        data1 = file.readlines()\n    with open('testOutput.txt', 'r') as file:\n        data2 = file.readlines()\n    print('--------------------------------------')\n    # print(data1)\n    # print(data2)\n    # with open('input.txt', 'r') as file:\n    #     data = file.readlines()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    global tests\n    global compiled\n    while tests <= 100:\n        compile_and_run('Generator.cpp',True)\n        compile_and_run('test.cpp')\n        compile_and_run('correct.cpp')\n        compare()\n        compiled = True\n        tests += 1",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "compiled",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "compiled = False\ntests = 1\ndef compile_and_run(file, is_generator = False):\n    compile_command = [\"g++\", file, \"-o\", \"output\"]\n    subprocess.run(compile_command, check=True)\n    run_command = [\"./output\"]\n    subprocess.run(run_command, check=True)\ndef compare():\n    with open('correctOutput.txt', 'r') as file:\n        data1 = file.readlines()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tests",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "tests = 1\ndef compile_and_run(file, is_generator = False):\n    compile_command = [\"g++\", file, \"-o\", \"output\"]\n    subprocess.run(compile_command, check=True)\n    run_command = [\"./output\"]\n    subprocess.run(run_command, check=True)\ndef compare():\n    with open('correctOutput.txt', 'r') as file:\n        data1 = file.readlines()\n    with open('testOutput.txt', 'r') as file:",
+        "detail": "main",
+        "documentation": {}
+    }
+]
